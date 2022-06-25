@@ -4,6 +4,8 @@ import './App.css';
 import ModeContext from "./mode-context";
 import ModeSwitchButton from "./components/parts/ModeSwitchButton";
 
+import ReactToPrint from 'react-to-print';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -31,7 +33,13 @@ class App extends React.Component {
             <h1 className="header">CV Builder</h1>
           </div>
           <ModeSwitchButton />
-          <ResumeDisplay />
+          <ReactToPrint 
+            content={() => this.componentRef}
+            trigger={() => {
+              return this.state.mode === "preview" ? <div className="print-btn"><button>Print Your Resume!</button></div> : <div></div>;
+            }}
+          />
+          <ResumeDisplay ref={el => (this.componentRef = el)}/>
         </ModeContext.Provider>
       </div>
     );

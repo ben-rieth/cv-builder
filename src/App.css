@@ -1,3 +1,28 @@
 .header {
     text-align: center;
 }
+
+.print-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.print-btn > button {
+    width: 20%;
+    padding: 10px 0;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.print-btn > button:hover {
+    background-color:white;
+    outline: 1px solid dodgerblue;
+    color: dodgerblue;
+}
